@@ -1,0 +1,66 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.brand{
+    font-size: 2.5rem;
+    font-family: monospace;
+    font-weight: bold;
+    color:transparent;
+    letter-spacing: 0.6rem;
+    text-transform: uppercase;
+    -webkit-text-stroke:1px #ff0000;
+    text-stroke:1px #ff0000;
+    position: relative;
+    display: inline-block;
+}
+
+.brand__name{
+    padding-left: 1rem;
+}
+
+.brand__name::before{
+    content:var(--brand-name);
+    position: absolute;
+    color: #00ffff;
+    width: 0;
+    left: 0;
+    padding-left: 1rem;
+    overflow: hidden;
+    -webkit-text-stroke:1px #00ffff;
+    text-stroke:1px #00ffff;
+    transition: .4s linear;
+   
+}
+
+.brand__name:hover::before{
+    width: 100%;
+    box-shadow: 0 0 20px #feee;
+}
+
+.brand__name::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 50px;
+    background-color: #ff0000;
+    border-radius: 20px;
+    left: 0;
+    transform: skew(20deg);
+    transition: .9s;
+}
+
+.brand__name:hover::after{
+    left: 100%;
+    transform: skew(-20deg);
+    background-color: #00FFFf;
+}
